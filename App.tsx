@@ -8,7 +8,10 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <Page />
+
+      <Text>App.tsx {token}</Text>
+
+      <Page token={token} />
     </View>
   );
 }

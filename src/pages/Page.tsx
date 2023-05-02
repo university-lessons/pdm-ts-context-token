@@ -2,12 +2,16 @@ import { View, Text } from "react-native";
 import React from "react";
 import Post from "./_Post/Post";
 
-export default function Page() {
+interface Props {
+  token: string;
+}
+
+export default function Page({ token }: Props) {
   return (
     <View>
-      <Text>Page</Text>
+      <Text>Page {token}</Text>
 
-      <Post />
+      <Post token={token} />
     </View>
   );
 }

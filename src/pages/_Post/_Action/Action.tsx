@@ -1,10 +1,14 @@
 import { View, Text } from "react-native";
 import React from "react";
 
-export default function Action() {
+interface Props {
+  token: string;
+}
+
+export default function Action({ token }: Props) {
   return (
     <View>
-      <Text>Action Like</Text>
+      <Text>Action Like {token} </Text>
     </View>
   );
 }
