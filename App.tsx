@@ -4,10 +4,8 @@ import { TokenContextProvider } from "./src/contexts/TokenContext";
 import Page from "./src/pages/Page";
 
 export default function App() {
-  const token = "ABC123";
-
   return (
-    <TokenContextProvider token={token}>
+    <TokenContextProvider>
       <View style={styles.container}>
         <StatusBar style="auto" />
         <Page />

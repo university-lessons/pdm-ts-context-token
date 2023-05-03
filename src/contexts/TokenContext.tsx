@@ -1,4 +1,10 @@
-import { createContext, ReactNode, useContext } from "react";
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 interface TokenContextProps {
   token: string;
@@ -9,14 +15,18 @@ const TokenContext = createContext<TokenContextProps>({
 });
 
 interface TokenContextProviderProps {
-  token: string;
   children: ReactNode;
 }
 
-export function TokenContextProvider({
-  token,
-  children,
-}: TokenContextProviderProps) {
+export function TokenContextProvider({ children }: TokenContextProviderProps) {
+  const [token, setToken] = useState("");
+
+  useEffect(() => {
+    setTimeout(() => {
+      setToken("ABC123");
+    }, 2000);
+  }, []);
+
   return (
     <TokenContext.Provider value={{ token }}>{children}</TokenContext.Provider>
   );
